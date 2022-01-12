@@ -9,4 +9,4 @@ else{
     document.write("<b><p>Good Afternoon!</p></b>");
 }
 
-document.getElementById("time").innerHTML = ti
+document.getElementById("time").innerHTML = d;
