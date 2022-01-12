@@ -1,0 +1,74 @@
+body {
+    /* background-image: url("../tasks.jpg"); */
+    background-repeat: repeat;
+    background-color: antiquewhite;
+    
+    
+  } 
+
+  h1 {
+    color: #7037e9;
+    padding: 10px;
+  
+    
+  }
+  .box {
+    max-width: 450px;
+    margin-left: 100px;
+    border-radius: 3px;
+    background-color: rgb(230, 214, 214);
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+  
+   #heading {
+    background-color: white;
+    margin-left: 150px;
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  input[type="text"] {
+    text-align: center;
+    height: 40px;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    font-weight: 200;
+    width: 313px;
+  }
+  input[type="text"]:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 tomato;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  p {
+    font-size: 20px;
+    margin-left: 80px;
+    margin-top: -20px;
+  }
+  
+  #b {
+    width: 60px;
+    height: 75px;
+    background-color: rgb(245, 182, 65);
+    border: none;
+    border-radius: 40%;
+    text-align: center;
+    font-size: 36px;
+    margin-left: -30px;
+    cursor: pointer;
+    color: white;
+  }
+  #s2 {
+    font-size: 90px;
+  }
+  form.item {
+    text-align: center;
+  }
+
+  #time {
+    float: right;
+  }
