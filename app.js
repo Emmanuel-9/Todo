@@ -5,7 +5,25 @@ var app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true}));
-mongoose.connect("mongodb://localhost:27017/todolistDB");
+app.use(bodyParser.json());
+
+
+
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://user:root@cluster0.ocuw0.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+MongoClient.connect(uri, {
+    useUnifiedTopology: true
+  }, (err, client) => {
+    if (err) return console.error(err)
+    console.log('Connected to Database')
+  })
 
 const itemSchema = {
     name: String,
@@ -62,6 +80,27 @@ app.post("/delete", function(req, res) {
 
     });
 });
+
+app.put("/", function(req, res)  {
+    
+    ItemCollection.findOneAndUpdate(
+        { name: 'Welcome to Programming' },{ $set: {name: req.body.name}},{upsert: true}
+    ).then(result => {
+        res.json('Success');
+        res.redirect('/');
+       })
+      .catch(error => console.error(error))
+  
+})
+
+
+
+
+
+
+
+
+
 
 app.listen(3000, function() {
     console.log("listening on port 3000.")
